@@ -1,0 +1,5 @@
+= Locked Page Parts
+
+An extension that allows developers to "lock" certain page parts. These parts are disabled for every user who is not a developer.
+
+Warning: this is a soft lock, anyone with some Javascript knowledge can reverse the process with Firebug, this is meant as a safety-net for non-tech-savy users.

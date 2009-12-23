@@ -1,0 +1,14 @@
+- page_part_counter = @page.parts.index(page_part)
+- if current_user.developer?
+  %span.lock_page_part
+    ~ check_box_tag "page[parts_attributes][#{page_part_counter}][locked]", '1', page_part.locked?
+    %label{:for => "page_parts_attributes_#{page_part_counter}_locked"}
+      Locked
+- elsif page_part.locked?
+  :javascript
+    (function($){
+      $(function() {
+        var tab = $('.tab:eq(#{page_part_counter})')
+        tab.replaceWith("<span class='tab disabled'>" + tab.text() + "</span>")
+      })
+    })(jQuery)
