@@ -7,7 +7,7 @@
 - elsif page_part.locked?
   :javascript
     (function($){
-      $(function() {
+      document.observe('dom:loaded', function() {
         var tab = $('.tab:eq(#{page_part_counter})')
         tab.replaceWith("<span class='tab disabled'>" + tab.text() + "</span>")
       })
