@@ -1,5 +1,5 @@
 - page_part_counter = @page.parts.index(page_part)
-- if current_user.developer?
+- if current_user.admin?
   %span.lock_page_part
     ~ check_box_tag "page[parts_attributes][#{page_part_counter}][locked]", '1', page_part.locked?
     %label{:for => "page_parts_attributes_#{page_part_counter}_locked"}
