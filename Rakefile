@@ -1,3 +1,19 @@
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gem|
+    gem.name = "radiant-locked_page_parts-extension"
+    gem.summary = %Q{Locked Page Parts extension for Radiant CMS}
+    gem.description = %Q{Allows you to hide certain page parts from normal users}
+    gem.email = "benny@gorilla-webdesign.be"
+    gem.homepage = "https://github.com/jomz/radiant_locked_page_parts"
+    gem.authors = ["Benny Degezelle"]
+    gem.add_dependency 'radiant', ">=0.9.1"
+    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+  end
+rescue LoadError
+  puts "Jeweler (or a dependency) not available. This is only required if you plan to package copy_move as a gem."
+end
+
 # I think this is the one that should be moved to the extension Rakefile template
 
 # In rails 1.2, plugins aren't available in the path until they're loaded.

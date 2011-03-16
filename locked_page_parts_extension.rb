@@ -2,9 +2,9 @@
 # require_dependency 'application_controller'
 
 class LockedPagePartsExtension < Radiant::Extension
-  version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/locked_page_parts"
+  version "0.1.1"
+  description "Allows you to hide certain page parts from normal users"
+  url "https://github.com/jomz/radiant_locked_page_parts"
   
   define_routes do |map|
     map.namespace :admin do |admin|
