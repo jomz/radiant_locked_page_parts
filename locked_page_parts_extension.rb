@@ -2,7 +2,7 @@
 # require_dependency 'application_controller'
 
 class LockedPagePartsExtension < Radiant::Extension
-  version "0.1.1"
+  version "0.1.2"
   description "Allows you to hide certain page parts from normal users"
   url "https://github.com/jomz/radiant_locked_page_parts"
   
