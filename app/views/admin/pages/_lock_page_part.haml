@@ -4,12 +4,17 @@
     ~ hidden_field_tag "page[parts_attributes][#{page_part_counter}][locked]", :value => '0'
     ~ check_box_tag "page[parts_attributes][#{page_part_counter}][locked]", '1', page_part.locked?
     %label{:for => "page_parts_attributes_#{page_part_counter}_locked"}
-      Locked
+      = t('lock_page_parts.locked')
 - elsif page_part.locked?
   :javascript
-    (function($){
       document.observe('dom:loaded', function() {
-        var tab = $('.tab:eq(#{page_part_counter})')
-        tab.replaceWith("<span class='tab disabled'>" + tab.text() + "</span>")
+        var tab = $$('.tab')[#{page_part_counter}]
+        var page = $$('#pages .page')[#{page_part_counter}]
+        
+        tab.replace("<span class='tab disabled'>" + tab.innerText + "</span>")
+        
+        page.select('textarea').first().replace("<div class='locked-part-placeholder'><p>#{t('locked_page_parts.disabled_message')}</p></div>")
+        page.select('select').first().disable()
+        
+        $$('a.tab:first').click()
       })
-    })(jQuery)

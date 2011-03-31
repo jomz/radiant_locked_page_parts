@@ -1,0 +1,4 @@
+en:
+  locked_page_parts:
+    disabled_message: This page is only editable by an admin.
+    locked: Locked
