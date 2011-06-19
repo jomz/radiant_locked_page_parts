@@ -3,12 +3,7 @@ class LockedPagePartsExtension < Radiant::Extension
   description "Allows you to hide certain page parts from normal users"
   url "https://github.com/jomz/radiant_locked_page_parts"
   
-  def activate
-    # extend parts controller with lock and unlock methods;
-    Admin::PagePartsController.class_eval do
-      include PagePartsControllerExtensions
-    end
-    
+  def activate    
     admin.page.edit.add :part_controls, 'lock_page_part'
     admin.page.edit.add :main, 'locked_page_style'
   end
