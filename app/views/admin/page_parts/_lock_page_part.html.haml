@@ -1,6 +1,6 @@
 - if current_user.admin?
   %span.lock_page_part
-    ~ hidden_field_tag "page[parts_attributes][#{page_part_counter}][locked]", :value => '0'
+    ~ hidden_field_tag "page[parts_attributes][#{params[:index].to_i}][locked]", :value => '0'
     ~ check_box_tag "page[parts_attributes][#{params[:index].to_i}][locked]", '1', page_part.locked?
     %label{:for => "page_parts_attributes_#{params[:index].to_i}_locked"}
       = t('locked_page_parts.locked')
