@@ -1,16 +1,7 @@
-# Uncomment this if you reference any of your controllers in activate
-# require_dependency 'application_controller'
-
 class LockedPagePartsExtension < Radiant::Extension
-  version "0.1.8"
+  version "0.1.9"
   description "Allows you to hide certain page parts from normal users"
   url "https://github.com/jomz/radiant_locked_page_parts"
-  
-  define_routes do |map|
-    map.namespace :admin do |admin|
-      admin.resources :page_parts, :member => { :lock => :post, :unlock => :post }
-    end
-  end
   
   def activate
     # extend parts controller with lock and unlock methods;
