@@ -1,5 +1,5 @@
 module RadiantLockedPagePartsExtension
-  VERSION     = "0.1.10"
+  VERSION     = "0.1.11"
   SUMMARY     = %q{Allows you to hide certain page parts from normal users}
   DESCRIPTION = %q{Adds a checkbox for every page part that allows admins to 'lock' them}
   URL         = "https://github.com/jomz/radiant_locked_page_parts"
